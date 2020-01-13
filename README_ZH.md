@@ -10,7 +10,7 @@ kingbus是一个基于raft强一致协议实现的分布式MySQL binlog 存储�
 
 * 兼容MySQL 复制协议，**通过Gtid方式同步**Master上的binlog，同时支持slave通过Gtid方式从kingbus拉取binlog。
 
-* 跨地域数据复制，kingbus通过raft协议支出跨地域间的数据复制。写入到集群的binlog数据在多个节点间保证强一致，并保证binlog顺序与master上完全一致。
+* 跨地域数据复制，kingbus通过raft协议支持跨地域间的数据复制。写入到集群的binlog数据在多个节点间保证强一致，并保证binlog顺序与master上完全一致。
 
 * 高可用，由于kingbus是构建在Raft强一致协议之上，能够实现集群中过半数节点存活的情况下，整个binlog拉取和推送服务高可用。
 
@@ -26,9 +26,11 @@ kingbus是一个基于raft强一致协议实现的分布式MySQL binlog 存储�
 
 更多使用场景，可以参考:
 
-* [Binlog server at booking](https://medium.com/booking-com-infrastructure/mysql-slave-scaling-and-more-a09d88713a20)
+* Booking: [Binlog server at booking](https://medium.com/booking-com-infrastructure/mysql-slave-scaling-and-more-a09d88713a20)
 
-* [Binlog server at facebook](docs/binlog_server_at_fackbook.pdf)
+* Facebook: [Binlog server at facebook](docs/binlog_server_at_fackbook.pdf)
+
+* Google: [mysql-ripple](https://github.com/google/mysql-ripple)
 
 ## Quick Start
 
@@ -40,9 +42,13 @@ kingbus采用Apache 2.0协议，相关协议请参看[目录](LICENSES)
 
 ## 文档
 
-1.[Kingbus 管理API说明](docs/cn/admin_api.md)
+1.[kingbus的架构与设计](docs/cn/architecture.md)
 
-2.[通过docker-compose创建kingbus集群](docs/cn/docker_compose.md)
+2.[Kingbus 管理API说明](docs/cn/admin_api.md)
+
+3.[通过docker-compose创建kingbus集群](docs/cn/docker_compose.md)
+
+4.[kingbus架构设计之如何伪装成MySQL Master角色](docs/cn/become_master.md)
 
 ## 反馈
 

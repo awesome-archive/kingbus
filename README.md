@@ -25,14 +25,19 @@ In a traditional MySQL replication setup a single master server is created and a
 
 * Kingbus allows us to horizontally scale our slaves without fear of overloading the network interface of the master
 
-* Kingbus can also be used to avoide deep nested replication on remote sites, with kinbus you don't need e deeply nested replication.
+* Kingbus can also be used to avoide deep nested replication on remote sites, with kingbus you don't need e deeply nested replication.
 
 * The size of the binlog storage space on the Master can be reduced, and store the binlog in kingbus.
 
 * Support MYSQL database heterogeneous log based replication. Other heterogeneous replication components can be connected to the kingbus, such as [canal](https://github.com/alibaba/canal).
 
-For more usage scenarios of binlog server, please refer to the booking [blog](https://medium.com/booking-com-infrastructure/mysql-slave-scaling-and-more-a09d88713a20) or 
-[binlog server at Facebook](docs/binlog_server_at_fackbook.pdf).
+For more usage scenarios of binlog server, please refer:
+
+* Booking: [blog](https://medium.com/booking-com-infrastructure/mysql-slave-scaling-and-more-a09d88713a20) 
+
+* Facebook: [binlog server at Facebook](docs/binlog_server_at_fackbook.pdf)
+
+* Google: [mysql-ripple](https://github.com/google/mysql-ripple)
 
 ## Quick start
 
